@@ -86,9 +86,33 @@ function uploadFile(file, i) {
 
   xhr.addEventListener("readystatechange", function (e) {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      // Respond with the response text from the server
-      alert(xhr.responseText);
+      // Done. Inform the user and link to the zip file of the output
+
       dropArea.classList.remove("uploading");
+
+      // Get the response from the server as JSON
+      // {
+      //   status: 200,
+      //   message: `${filename} uploaded successfully`,
+      //   file: `${OUTPUT_DIRECTORY}.zip`,
+      // };
+      var response = JSON.parse(xhr.responseText);
+
+      // Check if the response is an success
+
+      if (response.status === 200) {
+        // Inform the user
+        // alert(response.message);
+
+        // Create a link to download the zip file
+        var downloadLink = document.createElement("a");
+        downloadLink.className = "result";
+        downloadLink.href = response.file;
+        downloadLink.download = response.file;
+        downloadLink.innerText = "Success! Download the output file";
+        // Add the link to the page
+        document.getElementById("drop-area").appendChild(downloadLink);
+      }
     } else if (xhr.readyState == 4 && xhr.status != 200) {
       // Error. Inform the user
       alert("An error occurred while uploading the file");

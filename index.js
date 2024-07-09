@@ -41,6 +41,13 @@ app.post("/upload", function (req, res) {
   res.json(response);
 });
 
+// '/output' route
+//  /output/al2i6zexfnp.zip
+app.get("/output/:filename", (req, res) => {
+  const filename = req.params.filename;
+  res.sendFile(path.join(__dirname, "output", filename));
+});
+
 // Listen on port 3000
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);

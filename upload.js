@@ -4,7 +4,7 @@ AdmZip = require("adm-zip");
 
 module.exports.convert = function (file) {
   // Create a unique directory for each user
-  BASE_OUTPUT_DIRECTORY = "output";
+  const BASE_OUTPUT_DIRECTORY = "output";
   const uniqueID = Math.random().toString(36).substring(2, 15);
   const OUTPUT_DIRECTORY = path.join(BASE_OUTPUT_DIRECTORY, uniqueID);
 
@@ -129,5 +129,9 @@ module.exports.convert = function (file) {
 
   // Return a success message with the file name
   let filename = file.name;
-  return `${filename} uploaded successfully`;
+  return {
+    status: 200,
+    message: `${filename} uploaded successfully`,
+    file: `${OUTPUT_DIRECTORY}.zip`,
+  };
 };
