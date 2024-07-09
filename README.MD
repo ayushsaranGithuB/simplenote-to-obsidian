@@ -3,7 +3,9 @@
 ## See it in action:
 https://simplenote-to-obsidian.fly.dev/
 
-[![https://simplenote-to-obsidian.fly.dev/](https://simplenote-to-obsidian.fly.dev/](https://github.com/ayushsaranGithuB/simplenote-to-obsidian/assets/112019897/a3e65e5b-a9a3-4715-9d71-3f59418d6a82 'https://simplenote-to-obsidian.fly.dev/')](https://simplenote-to-obsidian.fly.dev/)
+
+[![https://simplenote-to-obsidian.fly.dev/](https://github.com/ayushsaranGithuB/simplenote-to-obsidian/assets/112019897/a3e65e5b-a9a3-4715-9d71-3f59418d6a82)](https://simplenote-to-obsidian.fly.dev/)
+
 
 # HOW IT WORKS
 
