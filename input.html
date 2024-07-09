@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleNote to Obsidian Migration tool</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <script defer src="input.js"></script>
+
+</head>
+
+<body>
+    <!-- This page allows users to upload or drag and drop a .JSON file from Simplenote and get a .ZIP file back with .MD files as their converted notes -->
+</body>
+
+<div class="page">
+    <div class="container">
+        <h1>SimpleNote to Obsidian</h1>
+        <h2>Upload your Simplenote .JSON file to convert it to .MD files for Obsidian with tags preserved</h2>
+        <img src="header.png" width="550" alt="">
+        <form class="upload-form" id="drop-area" action="/convert" method="post" enctype="multipart/form-data">
+            <div class="input-box">
+                <p>Drag and Drop your .JSON file from Simplenote</p>
+                <p><strong>OR</strong></p>
+                <input type="file" name="file" id="file" accept=".json" onchange="handleFiles(this.files)">
+                <!-- our custom upload button -->
+                <p>
+                    <label class="btn" for="file">Choose File</label>
+                </p>
+            </div>
+            <!-- name of file chosen -->
+            <!-- <p id="file-chosen"><small>No file chosen</small></p> -->
+        </form>
+    </div>
+</div>
+
+</html>
