@@ -20,6 +20,11 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "input.html"));
 });
 
+// instructions route
+app.get("/instructions", (req, res) => {
+  res.sendFile(path.join(__dirname, "instructions.html"));
+});
+
 // 'upload' route
 app.post("/upload", function (req, res) {
   if (!req.files || Object.keys(req.files).length === 0) {
