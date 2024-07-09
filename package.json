@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "adm-zip": "^0.5.14",
     "express": "^4.19.2",
     "express-fileupload": "^1.5.0",
     "fs": "^0.0.1-security"
