@@ -106,10 +106,17 @@ function uploadFile(file, i) {
 
         // Create a link to download the zip file
         var downloadLink = document.createElement("a");
-        downloadLink.className = "result";
+        downloadLink.className = "btn";
         downloadLink.href = response.file;
         downloadLink.download = response.file;
         downloadLink.innerText = "Success! Download the output file";
+
+        // Mark the drop area as success
+        dropArea.classList.add("success");
+
+        // Hide the input-box
+        document.querySelector(".input-box").style.display = "none";
+
         // Add the link to the page
         document.getElementById("drop-area").appendChild(downloadLink);
       }

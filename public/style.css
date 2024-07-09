@@ -70,6 +70,12 @@ form.uploading {
     min-height: unset;
 }
 
+form.success {
+    background-image: url('success.svg');
+    background-size: 50px;
+    border: 2px solid #35d235;
+}
+
 form.uploading div.input-box {
     display: none;
 }
@@ -106,11 +112,18 @@ form.upload-form input[type="file"] {
     transform: translateY(-1px);
 }
 
-form.upload-form label.btn {
+form.upload-form label.btn,
+a.btn {
     background-image: url('attachment.svg');
     background-size: 17px;
     background-repeat: no-repeat;
     background-position: 8px center;
     padding-left: 30px;
     margin-top: 15px;
+    text-decoration: none;
+    color: #fff;
+}
+
+a.btn {
+    background-image: url('download.svg');
 }
