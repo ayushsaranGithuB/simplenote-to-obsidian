@@ -50,6 +50,10 @@ h2 {
     margin: 10px auto 40px;
 }
 
+.header-image {
+    width: 550px;
+}
+
 form.upload-form {
     margin-top: 40px;
     border: 2px dashed #FFFFFF;
@@ -149,4 +153,42 @@ a:visited {
     padding: 30px 0 0;
     border-top: 2px dashed #fff;
     margin-top: 30px;
+}
+
+/* RESPONSIVE STYLES */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .header-image {
+        width: 400px;
+        max-width: 90%;
+    }
+
+    form.upload-form {}
+
+    form.upload-form p {
+        font-size: 14px;
+    }
+
+    form.upload-form label.btn,
+    a.btn {
+        padding-left: 25px;
+    }
+
+    .instructions {
+        font-size: 16px;
+    }
 }
