@@ -78,11 +78,17 @@ module.exports.convert = function (file) {
       // Function to sanitize filenames
       function sanitizeFilename(filename) {
         if (filename.length === 0) {
-          return Math.random().toString(36).substring(2, 15) + ".md";
+          return Math.random().toString(36).substring(2, 15);
         }
-        return filename
+        let NewfileName = filename
           .replace(/[<>:"\/\\|?*\x00-\x1F]/g, "-")
           .replace(/^CON$|^PRN$|^AUX$|^NUL$|^COM[1-9]$|^LPT[1-9]$/i, "_$&");
+
+        // If the NewfileName has a trailing '-' at the end, remove it
+        if (NewfileName.slice(-1) === "-") {
+          NewfileName = NewfileName.slice(0, -1);
+        }
+        return NewfileName;
       }
 
       // Assuming the rest of your code remains the same up to the filename assignment
@@ -93,7 +99,7 @@ module.exports.convert = function (file) {
         filename = filename + ".md";
       }
 
-      filename = filename.replace(/[/:]/g, "").replace(/\s+/g, "-");
+      filename = filename.replace(/[/:]/g, ""); //.replace(/\s+/g, "-");
       const filepath = path.join(OUTPUT_DIRECTORY, filename);
 
       if (filenames[filename]) {
