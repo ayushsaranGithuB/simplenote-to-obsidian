@@ -119,6 +119,9 @@ function uploadFile(file, i) {
 
         // Add the link to the page
         document.getElementById("drop-area").appendChild(downloadLink);
+      } else {
+        // If the response is an error Inform the user
+        alert(response.message);
       }
     } else if (xhr.readyState == 4 && xhr.status != 200) {
       // Error. Inform the user
