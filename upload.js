@@ -31,20 +31,21 @@ module.exports.convert = function (file) {
   }
 
   if (!data || typeof data !== "object") {
-    console.error(
-      `Could not parse ${INPUT_FILE}. Are you sure it's a JSON file?`
-    );
+    console.error(`Could not parse. Are you sure it's a JSON file?`);
     return {
-      status: 400,
-      message: `Could not parse ${INPUT_FILE}. Are you sure it's a JSON file?`,
+      status: "400",
+      message: `Could not parse. Are you sure it's a JSON file?`,
     };
   }
 
   if (!data.activeNotes || !Array.isArray(data.activeNotes)) {
     console.error(
-      `There is no 'activeNotes' element in the data found in ${INPUT_FILE}. Are you sure it's a Simplenote file?`
+      `There is no 'activeNotes' element in the data found. Are you sure it's a Simplenote file?`
     );
-    return;
+    return {
+      status: 400,
+      message: `There is no 'activeNotes' element in the data found. Are you sure it's a Simplenote file?`,
+    };
   }
 
   // Setup the output directory

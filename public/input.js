@@ -96,6 +96,7 @@ function uploadFile(file, i) {
       //   message: `${filename} uploaded successfully`,
       //   file: `${OUTPUT_DIRECTORY}.zip`,
       // };
+      console.log("response:", xhr.responseText);
       var response = JSON.parse(xhr.responseText);
 
       // Check if the response is an success
